@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyRecyclerView</string>
+    <string name="heroes_name">Nama Pahlawan</string>
+    <string name="detail">Detail</string>
+    <string name="list">List</string>
+    <string name="grid">Grid Foto</string>
+    <string name="with_cardview">CardView</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="about">About</string>
+    <string name="kost_harga">Harga Kost</string>
+</resources>
