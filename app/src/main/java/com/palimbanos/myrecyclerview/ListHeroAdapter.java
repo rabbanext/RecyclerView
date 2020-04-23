@@ -21,6 +21,11 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
         this.listHero = list;
     }
 
+    private OnItemClickCallback onItemClickCallback;
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
 
     @NonNull
     @Override
@@ -38,6 +43,17 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
                 .into(holder.imgPhoto);
         holder.tvName.setText(hero.getName());
         holder.tvAlamat.setText(hero.getAlamat());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(listHero.get(holder.getAdapterPosition()));
+            }
+        });
+    }
+
+    public interface OnItemClickCallback {
+        void onItemClicked(Hero data);
     }
 
     @Override
