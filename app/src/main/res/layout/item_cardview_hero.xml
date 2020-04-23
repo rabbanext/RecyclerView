@@ -33,6 +33,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                tools:text="@string/heroes_name" />
             <LinearLayout
                 android:id="@+id/layout_button"
                 android:layout_width="match_parent"
@@ -75,12 +82,6 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_item_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                tools:text="@string/heroes_name" />
         </LinearLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
