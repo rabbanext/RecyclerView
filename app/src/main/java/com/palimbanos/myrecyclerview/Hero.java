@@ -2,7 +2,7 @@ package com.palimbanos.myrecyclerview;
 
 public class Hero {
     private String name;
-    private String detail;
+    private String alamat;
     private String harga;
     private int photo;
 
@@ -14,12 +14,12 @@ public class Hero {
         this.name = name;
     }
 
-    public String getDetail() {
-        return detail;
+    public String getAlamat() {
+        return alamat;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
     }
 
     public String getHarga() {

@@ -37,7 +37,7 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
                 .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPhoto);
         holder.tvName.setText(hero.getName());
-        holder.tvDetail.setText(hero.getDetail());
+        holder.tvAlamat.setText(hero.getAlamat());
     }
 
     @Override
@@ -47,13 +47,13 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView tvName, tvDetail;
+        TextView tvName, tvAlamat;
 
         ListViewHolder(View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.tv_item_name);
-            tvDetail = itemView.findViewById(R.id.tv_item_detail);
+            tvAlamat = itemView.findViewById(R.id.tv_item_alamat);
         }
     }
 }

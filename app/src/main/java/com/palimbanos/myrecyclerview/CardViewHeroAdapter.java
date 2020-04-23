@@ -39,7 +39,7 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
                 .apply(new RequestOptions().override(350, 550))
                 .into(holder.imgPhoto);
         holder.tvName.setText(hero.getName());
-        holder.tvDetail.setText(hero.getDetail());
+        holder.tvAlamat.setText(hero.getAlamat());
         holder.tvHarga.setText(hero.getHarga());
         /*holder.btnFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,10 +48,10 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
                         listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
             }
         });*/
-        holder.btnShare.setOnClickListener(new View.OnClickListener() {
+        holder.btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), "Share " +
+                Toast.makeText(holder.itemView.getContext(), "Detail " +
                         listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -64,16 +64,16 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
 
     class CardViewViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView tvName, tvDetail, tvHarga;
-        Button btnShare;
+        TextView tvName, tvAlamat, tvHarga;
+        Button btnDetail;
 
         CardViewViewHolder(View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.tv_item_name);
-            tvDetail = itemView.findViewById(R.id.tv_item_detail);
+            tvAlamat = itemView.findViewById(R.id.tv_item_alamat);
             tvHarga = itemView.findViewById(R.id.tv_item_harga);
-            btnShare = itemView.findViewById(R.id.btn_set_share);
+            btnDetail = itemView.findViewById(R.id.btn_set_detail);
             //btnFavorite = itemView.findViewById(R.id.btn_set_favorite);
         }
     }

@@ -6,7 +6,8 @@
     <string name="grid">Grid Foto</string>
     <string name="with_cardview">CardView</string>
     <string name="favorite">Favorite</string>
-    <string name="share">Share</string>
     <string name="about">About</string>
     <string name="kost_harga">Harga Kost</string>
+    <string name="alamat">Alamat Kost</string>
+    <string name="namakost">Nama Kost</string>
 </resources>

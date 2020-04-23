@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/img_item_photo"
-        android:layout_toRightOf="@id/img_item_photo"
         android:orientation="vertical">
 
         <TextView
@@ -21,15 +20,15 @@
             android:layout_marginBottom="8dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="@string/heroes_name" />
+            tools:text="@string/namakost" />
 
         <TextView
-            android:id="@+id/tv_item_detail"
+            android:id="@+id/tv_item_alamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            tools:text="@string/detail" />
+            tools:text="@string/alamat" />
     </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -37,6 +36,5 @@
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         tools:src="@android:color/darker_gray" />
 </RelativeLayout>

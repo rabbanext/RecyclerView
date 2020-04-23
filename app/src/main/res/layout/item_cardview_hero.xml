@@ -15,7 +15,7 @@
     <ImageView
         android:id="@+id/img_item_photo"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="165dp"
         android:layout_marginBottom="4dp"
         android:scaleType="centerCrop"
         tools:src="@color/colorAccent" />
@@ -30,6 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:orientation="vertical">
             <LinearLayout
                 android:id="@+id/layout_button"
@@ -37,6 +39,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/btn_set_detail"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/detail"
+                    android:textSize="12sp" />
                 <LinearLayout
                     android:id="@+id/layout_teks"
                     android:layout_width="250dp"
@@ -47,34 +57,26 @@
                         android:id="@+id/tv_item_harga"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         tools:text="@string/kost_harga" />
 
                     <TextView
-                        android:id="@+id/tv_item_detail"
+                        android:id="@+id/tv_item_alamat"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:textSize="11sp"
+                        android:textSize="12sp"
                         tools:ignore="SmallSp"
-                        tools:text="@string/detail" />
+                        tools:text="@string/alamat" />
                 </LinearLayout>
-
-                <Button
-                    android:id="@+id/btn_set_share"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/share"
-                    android:textSize="12sp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_item_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 tools:text="@string/heroes_name" />
