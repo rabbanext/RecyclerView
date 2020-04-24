@@ -10,4 +10,10 @@
     <string name="kost_harga">Harga Kost</string>
     <string name="alamat">Alamat Kost</string>
     <string name="namakost">Nama Kost</string>
+
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">R Muhammad Rabbani P\nrabbanian@outlook.com</string>
+    <string name="teksabout_email">rabbanian@outlook.com</string>
+    <string name="teksabout_nama">R Muhammad Rabbani P</string>
 </resources>
