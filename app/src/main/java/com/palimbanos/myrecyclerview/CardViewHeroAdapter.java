@@ -19,19 +19,24 @@ import java.util.ArrayList;
 public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapter.CardViewViewHolder> {
     private ArrayList<Hero> listHero;
 
+    private ListHeroAdapter.OnItemClickCallback onItemClickCallback;
+    public void setOnItemClickCallback(ListHeroAdapter.OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
     public CardViewHeroAdapter(ArrayList<Hero> list) {
         this.listHero = list;
     }
 
-    @NonNull
     @Override
     public CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_cardview_hero, viewGroup, false);
+
         return new CardViewViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CardViewViewHolder holder, int position) {
+    public void onBindViewHolder(final CardViewViewHolder holder, final int position) {
 
         Hero hero = listHero.get(position);
         Glide.with(holder.itemView.getContext())
@@ -41,26 +46,23 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
         holder.tvName.setText(hero.getName());
         holder.tvAlamat.setText(hero.getAlamat());
         holder.tvHarga.setText(hero.getHarga());
-        /*holder.btnFavorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), "Favorite " +
-                        listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
-            }
-        });*/
         holder.btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), "Detail " +
-                        listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+                onItemClickCallback.onItemClicked(listHero.get(holder.getAdapterPosition()));
             }
         });
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), "Kamu memilih " + listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+                onItemClickCallback.onItemClicked(listHero.get(holder.getAdapterPosition()));
             }
         });
+
+
+
     }
 
     @Override
@@ -80,7 +82,8 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
             tvAlamat = itemView.findViewById(R.id.tv_item_alamat);
             tvHarga = itemView.findViewById(R.id.tv_item_harga);
             btnDetail = itemView.findViewById(R.id.btn_set_detail);
-            //btnFavorite = itemView.findViewById(R.id.btn_set_favorite);
         }
     }
+
+
 }

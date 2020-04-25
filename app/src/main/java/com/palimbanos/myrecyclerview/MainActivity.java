@@ -9,14 +9,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvHeroes;
     private ArrayList<Hero> list = new ArrayList<>();
-    private String title = "Mode List";
+    private String title = "Sewa Gedung";
 
     private void setActionBarTitle(String title) {
         if (getSupportActionBar() != null) {
@@ -38,9 +37,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSelectedHero(Hero hero) {
-        Toast.makeText(this, "Kamu memilih " + hero.getName(), Toast.LENGTH_SHORT).show();
+        Intent moveWithDataIntent = new Intent(MainActivity.this, DetailKostActivity.class);
+        moveWithDataIntent.putExtra(DetailKostActivity.EXTRA_NAME, hero.getName());
+        moveWithDataIntent.putExtra(DetailKostActivity.EXTRA_ALAMAT, hero.getAlamat());
+        moveWithDataIntent.putExtra(DetailKostActivity.EXTRA_HARGA, hero.getHarga());
+        moveWithDataIntent.putExtra(DetailKostActivity.EXTRA_FOTO, hero.getPhoto());
+
+
+        startActivity(moveWithDataIntent);
     }
 
+    ///metode list
     private void showRecyclerList() {
         rvHeroes.setLayoutManager(new LinearLayoutManager(this));
         ListHeroAdapter listHeroAdapter = new ListHeroAdapter(list);
@@ -54,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    ///metode grid
     private void showRecyclerGrid() {
         rvHeroes.setLayoutManager(new GridLayoutManager(this, 2));
         GridHeroAdapter gridHeroAdapter = new GridHeroAdapter(list);
@@ -67,12 +75,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    ///metode card
     private void showRecycleCardView() {
         rvHeroes.setLayoutManager(new LinearLayoutManager(this));
         CardViewHeroAdapter cardViewHeroAdapter = new CardViewHeroAdapter(list);
         rvHeroes.setAdapter(cardViewHeroAdapter);
+
+        cardViewHeroAdapter.setOnItemClickCallback(new ListHeroAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Hero data) {
+                showSelectedHero(data);
+            }
+        });
     }
 
+    ///halaman about
     private void showAbout() {
         Intent intent = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(intent);
