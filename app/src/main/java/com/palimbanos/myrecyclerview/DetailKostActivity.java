@@ -32,10 +32,10 @@ public class DetailKostActivity extends AppCompatActivity {
         String stralamat = "Alamat : " + getIntent().getStringExtra(EXTRA_ALAMAT);
         tvDataDapat.setText(stralamat);
 
-        ImageView image = findViewById(R.id.image);
+        ImageView image = findViewById(R.id.img_item_photo);
         String strimage = getIntent().getStringExtra(EXTRA_FOTO);
         Glide.with(this)
-                .asDrawable()
+                .asBitmap()
                 .load(strimage)
                 .into(image);
 
