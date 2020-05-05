@@ -1,5 +1,7 @@
 package com.palimbanos.myrecyclerview;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -7,6 +9,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+
+import java.net.URL;
 
 public class DetailKostActivity extends AppCompatActivity {
     public static final String EXTRA_ALAMAT = "extra_alamat";
@@ -32,12 +36,16 @@ public class DetailKostActivity extends AppCompatActivity {
         String stralamat = "Alamat : " + getIntent().getStringExtra(EXTRA_ALAMAT);
         tvDataDapat.setText(stralamat);
 
-        ImageView image = findViewById(R.id.img_item_photo);
-        String strimage = getIntent().getStringExtra(EXTRA_FOTO);
+        ImageView image = findViewById(R.id.img_photo);
+        Integer gambar = getIntent().getIntExtra(EXTRA_FOTO,0);
         Glide.with(this)
                 .asBitmap()
-                .load(strimage)
+                .load(gambar)
                 .into(image);
+/*
+        ---log atau toast data fotonya
+
+        */
 
 
 
