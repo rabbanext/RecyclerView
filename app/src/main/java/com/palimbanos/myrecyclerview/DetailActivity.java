@@ -26,6 +26,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     public static final String EXTRA_DETAIL = "extra_detail";
     public static final String EXTRA_FOTO = "extra_foto";
     public static final String EXTRA_TELPON = "extra_telpon";
+    public static final String EXTRA_MAPS = "extra_maps";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +49,6 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         String strharga = getIntent().getStringExtra(EXTRA_HARGA);
         tvHarga.setText(strharga);
 
-        TextView tvTelpon = findViewById(R.id.tv_telpon);
-        String strtelpon = getIntent().getStringExtra(EXTRA_TELPON);
-        tvTelpon.setText(strtelpon);
-
         TextView tvAlamat = findViewById(R.id.tv_alamat);
         String stralamat = "Alamat : " + getIntent().getStringExtra(EXTRA_ALAMAT);
         tvAlamat.setText(stralamat);
@@ -65,6 +62,12 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
         Button btnDialPhone = findViewById(R.id.btn_dial_number);
         btnDialPhone.setOnClickListener(this);
+
+        Button btnWa = findViewById(R.id.btn_whatsapp);
+        btnWa.setOnClickListener(this);
+
+        Button btnMaps = findViewById(R.id.btn_maps);
+        btnMaps.setOnClickListener(this);
     }
 
     @Override
@@ -76,16 +79,28 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 Intent dialPhoneIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + strtelpon));
                 startActivity(dialPhoneIntent);
                 break;
+            case R.id.btn_whatsapp:
+                String nomorWa = getIntent().getStringExtra(EXTRA_TELPON);
+                String strnamagedung = getIntent().getStringExtra(EXTRA_NAME);
+                String webAddress = "https://api.whatsapp.com/send?phone=" + nomorWa + "&text=Halo, Saya mau tanya tentang *" + strnamagedung + "*\n (SewaGedung.id)";
+                Intent browseWebIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(webAddress));
+                startActivity(browseWebIntent);
+                break;
+            case R.id.btn_maps:
+                String mapAddress = getIntent().getStringExtra(EXTRA_MAPS);
+                Intent browseMapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mapAddress));
+                startActivity(browseMapIntent);
+                break;
+
+
         }
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

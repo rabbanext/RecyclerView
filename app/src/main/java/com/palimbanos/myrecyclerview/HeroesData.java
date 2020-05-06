@@ -2,7 +2,7 @@ package com.palimbanos.myrecyclerview;
 
 import java.util.ArrayList;
 
-public class HeroesData {
+class HeroesData {
     private static String[] gedungNama = {
             "AEKI",
             "Ar-Rahmah Centre Sri Melayu",
@@ -17,18 +17,32 @@ public class HeroesData {
             "Rajawali Grand Ballroom"
     };
 
+    private static String[] gedungMaps = {
+            "https://www.google.com/maps/place/AEKI+%2F+AICE/@-2.9901763,104.7455774,18z/data=!4m5!3m4!1s0x2e3b75fe62d74037:0x3b421ab8093ada5f!8m2!3d-2.9917379!4d104.7493057",
+            "https://www.google.com/maps/place/Ar-Rahmah+Centre+Sri+Melayu+%7C+Wedding+%26+Function+Hall/@-2.9713588,104.7265318,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b75b8a82521c1:0x5a58933aa11efbb5!8m2!3d-2.9713642!4d104.7287205",
+            "https://www.google.com/maps/place/Multipurpose+Building+Pusri/@-2.9710105,104.7964949,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b764aacdbe683:0xc365b4686a4d4709!8m2!3d-2.9710159!4d104.7986836",
+            "https://www.google.com/maps/place/Gedung+Serbaguna+Graha+66/@-2.9415916,104.7489025,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b7420bcbe0799:0xc69397f10c774a28!8m2!3d-2.941597!4d104.7510912",
+            "https://www.google.com/maps/place/Graha+Bungong+Jeumpa/@-2.9676154,104.80377,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b77b1bdaf9201:0xc0cda6d96743b64f!8m2!3d-2.9676208!4d104.8059587",
+            "https://www.google.com/maps/place/Graha+Darusalam/@-3.0009091,104.7257814,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b9e21f79ff667:0x8a9b77c07a976671!8m2!3d-3.0009145!4d104.7279701",
+            "https://www.google.com/maps/place/Gedung+Graha+Patria+Palembang/@-2.9478427,104.8008833,18z/data=!3m1!4b1!4m5!3m4!1s0x2e3b76fc123b8baf:0x517840090f819dc3!8m2!3d-2.9478448!4d104.8017242",
+            "https://www.google.com/maps/place/Gedung+Graha+Pinang+Masak/@-2.9591945,104.8043668,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b77a9055ccfe7:0x6deb4b43244d6111!8m2!3d-2.9591999!4d104.8065555",
+            "https://www.google.com/maps/place/Graha+Trisila/@-2.9144903,104.696236,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b737c0c27af85:0xc2e9d7faf1b6da75!8m2!3d-2.9144957!4d104.6984247",
+            "https://www.google.com/maps/place/Grand+Atyasa+Convention+Center+Palembang/@-2.9691723,104.7237855,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b75b75dfcf1d3:0x1564cdd722b64f15!8m2!3d-2.9691777!4d104.7259742",
+            "https://www.google.com/maps/place/Rajawali+Grand+Ballroom/@-2.9749193,104.7630707,17z/data=!3m1!4b1!4m5!3m4!1s0x2e3b766d7f037c55:0xbbc9794c9c812b6b!8m2!3d-2.9749247!4d104.7652594"
+    };
+
     private static String[] gedungTelpon = {
-            "081264046411",
-            "081264046412",
-            "081264046413",
-            "081264046414",
-            "081264046415",
-            "081264046416",
-            "081264046417",
-            "081264046418",
-            "081264046419",
-            "081264046410",
-            "081264046409"
+            "6281264046411",
+            "6281264046412",
+            "6281264046413",
+            "6281264046414",
+            "6281264046415",
+            "6281264046416",
+            "6281264046417",
+            "6281264046418",
+            "6281264046419",
+            "6281264046410",
+            "6281264046409"
     };
 
     private static int[] gedungFoto = {
@@ -99,6 +113,7 @@ public class HeroesData {
             hero.setHarga(gedungHarga[position]);
             hero.setDetail(gedungDetail[position]);
             hero.setTelpon(gedungTelpon[position]);
+            hero.setMaps(gedungMaps[position]);
             hero.setPhoto(gedungFoto[position]);
             list.add(hero);
         }

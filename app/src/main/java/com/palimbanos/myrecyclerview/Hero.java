@@ -6,6 +6,7 @@ public class Hero {
     private String harga;
     private String detail;
     private String telpon;
+    private String maps;
     private int photo;
 
     public String getName() {
@@ -16,43 +17,51 @@ public class Hero {
         this.name = name;
     }
 
-    public String getAlamat() {
+    String getAlamat() {
         return alamat;
     }
 
-    public void setAlamat(String alamat) {
+    void setAlamat(String alamat) {
         this.alamat = alamat;
     }
 
-    public String getHarga() {
+    String getHarga() {
         return harga;
     }
 
-    public void setHarga(String harga) {
+    void setHarga(String harga) {
         this.harga = harga;
     }
 
-    public String getDetail() {
+    String getDetail() {
         return detail;
     }
 
-    public void setDetail(String detail) {
+    void setDetail(String detail) {
         this.detail = detail;
     }
 
-    public String getTelpon() {
+    String getTelpon() {
         return telpon;
     }
 
-    public void setTelpon(String telpon) {
+    void setTelpon(String telpon) {
         this.telpon = telpon;
     }
 
-    public int getPhoto() {
+    String getMaps() {
+        return maps;
+    }
+
+    void setMaps(String maps) {
+        this.maps = maps;
+    }
+
+    int getPhoto() {
         return photo;
     }
 
-    public void setPhoto(int photo) {
+    void setPhoto(int photo) {
         this.photo = photo;
     }
 }
