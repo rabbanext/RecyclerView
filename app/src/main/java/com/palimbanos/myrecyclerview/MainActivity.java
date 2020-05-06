@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setActionBarTitle(String title) {
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(title);
+            getSupportActionBar().setDisplayShowTitleEnabled(false); //hilangkan judul
+            //getSupportActionBar().setTitle(title);
         }
     }
 
@@ -37,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSelectedHero(Hero hero) {
-        Intent moveWithDataIntent = new Intent(MainActivity.this, DetailKostActivity.class);
-        moveWithDataIntent.putExtra(DetailKostActivity.EXTRA_NAME, hero.getName());
-        moveWithDataIntent.putExtra(DetailKostActivity.EXTRA_ALAMAT, hero.getAlamat());
-        moveWithDataIntent.putExtra(DetailKostActivity.EXTRA_HARGA, hero.getHarga());
-        moveWithDataIntent.putExtra(DetailKostActivity.EXTRA_FOTO, hero.getPhoto());
+        Intent moveWithDataIntent = new Intent(MainActivity.this, DetailActivity.class);
+        moveWithDataIntent.putExtra(DetailActivity.EXTRA_NAME, hero.getName());
+        moveWithDataIntent.putExtra(DetailActivity.EXTRA_ALAMAT, hero.getAlamat());
+        moveWithDataIntent.putExtra(DetailActivity.EXTRA_HARGA, hero.getHarga());
+        moveWithDataIntent.putExtra(DetailActivity.EXTRA_FOTO, hero.getPhoto());
         startActivity(moveWithDataIntent);
     }
 

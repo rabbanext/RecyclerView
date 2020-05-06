@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:maxLength="20"
                 tools:text="@string/namakost" />
             <TextView
                 android:id="@+id/tv_item_harga"

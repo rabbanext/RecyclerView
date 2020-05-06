@@ -1,7 +1,5 @@
 package com.palimbanos.myrecyclerview;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,8 +7,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-
-import java.net.URL;
 
 public class DetailKostActivity extends AppCompatActivity {
     public static final String EXTRA_ALAMAT = "extra_alamat";
