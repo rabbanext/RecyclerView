@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         moveWithDataIntent.putExtra(DetailActivity.EXTRA_NAME, hero.getName());
         moveWithDataIntent.putExtra(DetailActivity.EXTRA_ALAMAT, hero.getAlamat());
         moveWithDataIntent.putExtra(DetailActivity.EXTRA_HARGA, hero.getHarga());
+        moveWithDataIntent.putExtra(DetailActivity.EXTRA_DETAIL, hero.getDetail());
+        moveWithDataIntent.putExtra(DetailActivity.EXTRA_TELPON, hero.getTelpon());
         moveWithDataIntent.putExtra(DetailActivity.EXTRA_FOTO, hero.getPhoto());
         startActivity(moveWithDataIntent);
     }

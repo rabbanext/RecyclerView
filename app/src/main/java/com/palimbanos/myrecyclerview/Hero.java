@@ -4,6 +4,8 @@ public class Hero {
     private String name;
     private String alamat;
     private String harga;
+    private String detail;
+    private String telpon;
     private int photo;
 
     public String getName() {
@@ -28,6 +30,22 @@ public class Hero {
 
     public void setHarga(String harga) {
         this.harga = harga;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public String getTelpon() {
+        return telpon;
+    }
+
+    public void setTelpon(String telpon) {
+        this.telpon = telpon;
     }
 
     public int getPhoto() {

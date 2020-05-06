@@ -58,27 +58,44 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_nama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/text_margin"
-                android:textSize="14sp"
-                tools:text="@string/heroes_name" />
-            <TextView
                 android:id="@+id/tv_harga"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/text_margin"
-                android:textSize="16sp"
+                android:gravity="right"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                tools:text="@string/kost_harga" />
+                tools:text="@string/kost_harga"
+                tools:ignore="RtlHardcoded" />
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="18sp"
+                tools:text="@string/detail" />
             <TextView
                 android:id="@+id/tv_alamat"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/text_margin"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 tools:text="@string/alamat" />
+            <TextView
+                android:id="@+id/tv_telpon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/text_margin"
+                android:textSize="18sp"
+                tools:text="telpon" />
+            <Button
+                android:id="@+id/btn_dial_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/dial_number" />
+
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

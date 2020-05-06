@@ -90,7 +90,9 @@ public class AboutActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle("SewaGedung.id");
-        }
+            actionBar.setDisplayHomeAsUpEnabled(true); // switch on the left hand icon
+            actionBar.setHomeAsUpIndicator(R.drawable.logomini); // replace with your custom icon
+            }
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_about);
