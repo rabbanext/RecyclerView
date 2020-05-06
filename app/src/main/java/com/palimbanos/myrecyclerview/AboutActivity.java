@@ -87,6 +87,10 @@ public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("SewaGedung.id");
+        }
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_about);

@@ -11,8 +11,8 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // langsung pindah ke MainActivity atau activity lain
-        // begitu memasuki splash screen ini
+        // langsung pindah ke MainActivity
+        // abis dari splash screen ini
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();

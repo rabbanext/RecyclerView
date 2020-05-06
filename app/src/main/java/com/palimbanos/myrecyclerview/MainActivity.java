@@ -1,5 +1,6 @@
 package com.palimbanos.myrecyclerview;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,12 +16,13 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvHeroes;
     private ArrayList<Hero> list = new ArrayList<>();
-    private String title = "Sewa Gedung";
 
-    private void setActionBarTitle(String title) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowTitleEnabled(false); //hilangkan judul
-            //getSupportActionBar().setTitle(title);
+    private void setActionBarTitle() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("SewaGedung.id");
+            actionBar.setDisplayHomeAsUpEnabled(true); // switch on the left hand icon
+            actionBar.setHomeAsUpIndicator(R.drawable.logomini); // replace with your custom icon
         }
     }
 
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setActionBarTitle(title);
+        setActionBarTitle();
 
         rvHeroes = findViewById(R.id.rv_heroes);
         rvHeroes.setHasFixedSize(true);
@@ -109,21 +111,19 @@ public class MainActivity extends AppCompatActivity {
     public void setMode(int selectedMode) {
         switch (selectedMode) {
             case R.id.action_list:
-                title = "Mode List";
+                //title = "Mode List";
                 showRecyclerList();
                 break;
             case R.id.action_grid:
-                title = "Mode Grid";
                 showRecyclerGrid();
                 break;
             case R.id.action_cardview:
-                title = "Mode CardView";
                 showRecycleCardView();
                 break;
             case R.id.action_about:
                 showAbout();
                 break;
         }
-        setActionBarTitle(title);
+        setActionBarTitle();
     }
 }
