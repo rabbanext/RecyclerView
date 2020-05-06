@@ -75,7 +75,6 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.btn_dial_number:
                 String strtelpon = getIntent().getStringExtra(EXTRA_TELPON);
-                //String phoneNumber = "081264046414";
                 Intent dialPhoneIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + strtelpon));
                 startActivity(dialPhoneIntent);
                 break;
