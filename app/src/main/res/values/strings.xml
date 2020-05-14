@@ -21,6 +21,6 @@
     <string name="action_settings">Settings</string>
     <string name="dial_number">Telpon</string>
     <string name="whatsapp">WhatsApp</string>
-    <string name="maps">LIHAT DI MAPS</string>
+    <string name="maps">Maps</string>
     <string name="todo">TODO</string>
 </resources>
